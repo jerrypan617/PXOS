@@ -26,71 +26,18 @@ A 32-bit x86 operating system kernel written in C and assembly, featuring a modu
 
 ## Core Components
 
-### 1. Boot System
-- Assembly-based bootloader (`boot.asm`)
-- Loads kernel from floppy disk sectors
-- Switches from **real mode** to **32-bit protected mode**
-- Sets up basic Global Descriptor Table (GDT)
+| Component | Description | Key Features |
+|-----------|-------------|--------------|
+| **Boot System** | Assembly bootloader | Real mode → Protected mode, GDT setup |
+| **Memory Management** | Virtual memory & paging | 4KB pages, heap allocation, memory tracking |
+| **Process Management** | Process scheduling | PCB, 5 states, 4 priorities, context switching |
+| **Interrupt System** | Hardware/software interrupts | IDT, x86 exceptions, system calls (int 0x80) |
+| **File System** | FAT12 filesystem | File/directory ops, simulation mode* |
+| **Device Drivers** | Hardware interfaces | VGA display, PS/2 keyboard |
+| **Interactive Shell** | Command interface | 20+ built-in commands, full CLI |
+| **Library Functions** | Utility functions | String/memory operations |
 
-### 2. Memory Management
-- 4KB pages with page directory and page tables
-- Support for virtual-to-physical address translation
-- Kernel heap allocation with `kmalloc`/`kfree`
-- Separate kernel and user space memory areas
-- Tracking of allocated/free memory
-
-### 3. Process Management
-- Process Control Block
-- 5 Process States of New, Ready, Running, Blocked, Terminated
-- 4 Priority levels of Low, Normal, High, Critical
-- Basic round-robin scheduler
-- Full register state preservation for context switching
-
-### 4. Interrupt System
-- Interrupt Descriptor Table (IDT) for complete interrupt handling
-- x86 exceptions (division by zero, page fault, etc.)
-- Timer and keyboard interrupt support (Hardware if drivers support)
-- Software interrupt 0x80 for system call interface
-
-### 5. File System
-- Basic FAT12 filesystem implementation
-- File Operations: touch, cat, rm
-- Directory Operations: mkdir, rmdir
-- Working directory support: pwd
-- **Note: File system is currently in simulation mode - actual disk I/O operations are not implemented.**
-
-### 6. Device Drivers
-
-#### VGA Driver
-- Text mode display (80x25 characters)
-- Color support (16 colors)
-- Cursor management
-- Screen scrolling
-- Character and string output functions
-
-#### Keyboard Driver
-- PS/2 keyboard input handling
-- Character input buffering
-- Special key support (backspace, enter)
-
-### 8. Interactive Shell
-- **Command Line Interface**: Full-featured shell with command parsing
-- **Built-in Commands**:
-  - `help` - Show available commands
-  - `clear` - Clear screen
-  - `info` - System information
-  - `memory` - Memory statistics
-  - `malloc`/`free` - Memory allocation
-  - `paging` - Paging information
-  - `memmap` - Memory map display
-  - `ls`/`cat`/`touch`/`rm` - File operations
-  - `mkdir`/`rmdir`/`cd`/`pwd` - Directory operations
-  - `ps`/`kill`/`priority` - Process management
-  - `syscall` - System call interface
-
-### 9. Library Functions
-- **String Operations**: strlen, strcpy, strcat, strcmp, strncpy, memset, memcpy
-- **Memory Utilities**: Memory manipulation and comparison functions
+*File system is in simulation mode - no actual disk I/O
 
 ## File Structure
 
