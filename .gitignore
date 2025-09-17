@@ -1,0 +1,22 @@
+# Build directory
+build/
+
+# Generated binary files
+*.bin
+*.o
+*.elf
+
+# Floppy image
+floppy.img
+
+# OS image
+os_image.bin
+
+# Backup files
+*~
+*.bak
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
