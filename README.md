@@ -1,3 +1,18 @@
+```
+         _    _      _             _           _        
+        /\ \/_/\    /\ \          /\ \        / /\      
+       /  \ \ \ \   \ \_\        /  \ \      / /  \     
+      / /\ \ \ \ \__/ / /       / /\ \ \    / / /\ \__  
+     / / /\ \_\ \__ \/_/       / / /\ \ \  / / /\ \___\ 
+    / / /_/ / /\/_/\__/\      / / /  \ \_\ \ \ \ \/___/ 
+   / / /__\/ /  _/\/__\ \    / / /   / / /  \ \ \       
+  / / /_____/  / _/_/\ \ \  / / /   / / /    \ \ \      
+ / / /        / / /   \ \ \/ / /___/ / /_/\__/ / /      
+/ / /        / / /    /_/ / / /____\/ /\ \/___/ /       
+\/_/         \/_/     \_\/\/_________/  \_____\/        
+                                                        
+```
+
 # PXOS Kernel
 
 A 32-bit x86 operating system kernel written in C and assembly, featuring a modular architecture with process management, memory management, filesystem support, and an interactive shell.
